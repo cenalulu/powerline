@@ -7,7 +7,14 @@
 			{
 				"function": "powerline.segments.common.net.hostname",
 				"priority": 10,
-                "exclude_domain": True
+                "args": {
+                    "exclude_domain": true
+                }
+
+			},
+			{
+				"function": "powerline.segments.common.env.user",
+				"priority": 30
 			},
 			{
 				"function": "powerline.segments.common.env.virtualenv",
