@@ -7,7 +7,7 @@
 			{
 				"function": "powerline.segments.common.net.hostname",
 				"priority": 10,
-                "exclude_domain": True
+                "exclude_domain": 1
 			},
 			{
 				"function": "powerline.segments.common.env.virtualenv",
