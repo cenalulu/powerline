@@ -15,18 +15,18 @@ from powerline.theme import requires_segment_info
 
 @requires_segment_info
 def hostname(pl, segment_info, only_if_ssh=False, exclude_domain=False):
-	'''Return the current hostname.
+    '''Return the current hostname.
 
-	:param bool only_if_ssh:
-		only return the hostname if currently in an SSH session
-	:param bool exclude_domain:
-		return the hostname without domain if there is one
-	'''
-	if only_if_ssh and not segment_info['environ'].get('SSH_CLIENT'):
-		return None
-	if exclude_domain:
-		return socket.gethostname().split('.')[0]
-	return socket.gethostname()
+    :param bool only_if_ssh:
+        only return the hostname if currently in an SSH session
+    :param bool exclude_domain:
+        return the hostname without domain if there is one
+    '''
+    if only_if_ssh and not segment_info['environ'].get('SSH_CLIENT'):
+        return None
+    if exclude_domain:
+        return socket.gethostname().split('.')[0]
+    return socket.gethostname()
 
 
 def _external_ip(query_url='http://ipv4.icanhazip.com/'):
@@ -120,9 +120,9 @@ internal_ip = with_docstring(internal_ip,
 Requires ``netifaces`` module to work properly.
 
 :param str interface:
-	Interface on which IP will be checked. Use ``auto`` to automatically 
-	detect interface. In this case interfaces with lower numbers will be 
-	preferred over interfaces with similar names. Order of preference based on 
+	Interface on which IP will be checked. Use ``auto`` to automatically
+	detect interface. In this case interfaces with lower numbers will be
+	preferred over interfaces with similar names. Order of preference based on
 	names:
 
 	#. ``eth`` and ``enp`` followed by number or the end of string.
@@ -131,7 +131,7 @@ Requires ``netifaces`` module to work properly.
 	#. Any other interface that is not ``lo*``.
 	#. ``lo`` followed by number or the end of string.
 :param int ipv:
-	4 or 6 for ipv4 and ipv6 respectively, depending on which IP address you 
+	4 or 6 for ipv4 and ipv6 respectively, depending on which IP address you
 	need exactly.
 ''')
 
@@ -268,17 +268,17 @@ falls back to reading
 :file:`/sys/class/net/{interface}/statistics/{rx,tx}_bytes`.
 
 :param str interface:
-	Network interface to measure (use the special value "auto" to have powerline 
+	Network interface to measure (use the special value "auto" to have powerline
 	try to auto-detect the network interface).
 :param str suffix:
 	String appended to each load string.
 :param bool si_prefix:
 	Use SI prefix, e.g. MB instead of MiB.
 :param str recv_format:
-	Format string that determines how download speed should look like. Receives 
+	Format string that determines how download speed should look like. Receives
 	``value`` as argument.
 :param str sent_format:
-	Format string that determines how upload speed should look like. Receives 
+	Format string that determines how upload speed should look like. Receives
 	``value`` as argument.
 :param float recv_max:
 	Maximum number of received bytes per second. Is only used to compute
